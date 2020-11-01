@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(#444, #000);
+  color: white;
+}
+.words {
+  color: black;
+  width: 90%;
+  display: flex;
+  list-style: none;
+  height: 150px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 100px;
+  overflow: auto;
+}
+.word {
+  background-color: #fff9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 2px;
+}
+.word.active {
+  background-color: #507cff;
+  color: rgb(255, 255, 255);
+}
+.word.correct {
+  background-color: #00ff0d;
+}
+.word.err {
+  background-color: #f75151;
+  color: white;
+}
+.input {
+  height: fit-content;
+  width: 90%;
+  display: flex;
+  background: white;
+  margin: 10px auto;
+  transition: all 250ms;
+  border-radius: 5px;
+}
+.word-input {
+  flex-grow: 1;
+  border: none;
+  overflow: hidden;
+  margin-left: 10px;
+}
+.word-input:focus {
+  outline: none;
+}
+.word-btn {
+  border: none;
+  padding: 10px;
+  background-color: #00a2ff;
+  color: white;
+  flex: 1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.result {
+  background: linear-gradient(#444, #000);
+  list-style: none;
+  padding: 10px;
+  width: 90%;
+  border-radius: 5px;
+  margin: 50px auto;
+  max-height: 200px;
+  overflow: auto;
+}
+.head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  text-decoration: underline;
+}
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+}
+.word-btn:hover {
+  background: #007ac0;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.words::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.words {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.progress.start {
+  animation: progress 60s linear forwards;
+  background: tomato;
+  height: 2px;
+}
+.hidden {
+  display: none;
+}
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
